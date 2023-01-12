@@ -3,8 +3,9 @@ import { authOptions } from "./auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth";
 import { NextApiRequest,NextApiResponse } from "next";
 import { PostProductSchema } from "../../types/postProduct";
+import products from "./products";
 
-export default async (req:NextApiRequest,res:NextApiResponse) => {
+const product = async (req:NextApiRequest,res:NextApiResponse) => {
     const session = await unstable_getServerSession(req,res,authOptions);
     if(!session){ res.status(401).json({messsage:"Unauthorized"});}
     if (req.method==="POST"){
@@ -50,3 +51,4 @@ export default async (req:NextApiRequest,res:NextApiResponse) => {
 
     res.end();
 }
+export default product;

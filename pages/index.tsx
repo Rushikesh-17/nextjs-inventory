@@ -19,7 +19,7 @@ const Home:CustomNextPage = () => {
       <main>
       {data?.user?.name || <Link href='/auth/signin'>Go To SignIn</Link> }
       {status === 'authenticated' && <button onClick={()=>signOut()}>Sign Out</button>}
-      <Link href='/catagories' style={{margin: "1rem"}}>Protected Page</Link>
+      <Link href='/Catagories' style={{margin: "1rem"}}>Protected Page</Link>
       </main>
 
       

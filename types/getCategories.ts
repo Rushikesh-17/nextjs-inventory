@@ -1,7 +1,7 @@
 import { Category } from "@prisma/client";
-import { Product , Date } from '@prisma/client';
+import { Product } from '@prisma/client';
 
-export type CategoryProduct = Product & {date:Date[]};
+export type CategoryProduct = Product;
 
 export interface GetCategory {
     id: Category["id"];

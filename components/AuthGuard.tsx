@@ -11,7 +11,8 @@ const AuthGuard = ({children}:{children: React.ReactNode}):any => {
 
     useEffect(()=>{
         if (status === "unauthenticated")
-            if (router.pathname != "/auth/signin") router.push("/auth/signin");
+            if (router.pathname != "/auth/signin") 
+                router.push("/auth/signin");
     },[status,data]);
     if (status === "loading")
         return(

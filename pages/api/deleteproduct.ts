@@ -3,7 +3,7 @@ import { authOptions } from "./auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth";
 import { NextApiRequest,NextApiResponse } from "next";
 
-export default async (req:NextApiRequest, res:NextApiResponse) => {
+const deleteproduct = async (req:NextApiRequest, res:NextApiResponse) => {
     const session = await unstable_getServerSession(req,res,authOptions);
     if (!session) res.status(401).json({message:"Unauthorized"});
     if (req.method === "PUT"){
@@ -23,3 +23,5 @@ export default async (req:NextApiRequest, res:NextApiResponse) => {
         res.end();
     }
 }
+
+export default deleteproduct;

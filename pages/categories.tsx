@@ -25,7 +25,7 @@ import { PostCategorySchema } from '../types/postCategory';
 import { queryClient } from './_app';
 
 
-const categories: CustomNextPage = () => {
+const Categories: CustomNextPage = () => {
     const { data: categories, isLoading: categoriesLoading } = useGetCategories();
 
     // Accordion State
@@ -239,5 +239,5 @@ const categories: CustomNextPage = () => {
 
 
 
-export default categories;
-categories.requireAuth = true;
+export default Categories;
+Categories.requireAuth = true;

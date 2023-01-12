@@ -4,7 +4,7 @@ import { unstable_getServerSession } from "next-auth";
 import { NextApiRequest,NextApiResponse } from "next";
 import { PostCategorySchema } from "../../types/postCategory";
 
-export default async (req:NextApiRequest,res:NextApiResponse) => {
+const category = async (req:NextApiRequest,res:NextApiResponse) => {
     const session = await unstable_getServerSession(req,res,authOptions);
     if(!session){ res.status(401).json({messsage:"Unauthorized"});}
     if (req.method==="POST"){
@@ -29,3 +29,5 @@ export default async (req:NextApiRequest,res:NextApiResponse) => {
     res.end();
 
 }
+
+export default category;

@@ -29,7 +29,7 @@ import { DeleteProductSchema } from '../types/deleteProducts';
 
 
 
-const products: CustomNextPage = () => {
+const Products: CustomNextPage = () => {
     const { data: products, isLoading: productsLoading } = useGetProducts();
 
     // Accordion State
@@ -400,5 +400,5 @@ const products: CustomNextPage = () => {
 
 
 
-export default products;
-products.requireAuth = true;
+export default Products;
+Products.requireAuth = true;

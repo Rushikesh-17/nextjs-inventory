@@ -34,7 +34,9 @@ export const authOptions:NextAuthOptions = ({
   callbacks:{
 
     async redirect({url,baseUrl}){
-      return baseUrl;
+      return url.startsWith(baseUrl)
+      ? Promise.resolve(url)
+      : Promise.resolve(baseUrl)
     },
 
     async session({session,token,user}) {
